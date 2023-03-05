@@ -1,3 +1,4 @@
+import pip
 import pygame
 import pygame_widgets
 from pygame_widgets.textbox import TextBox
@@ -8,6 +9,7 @@ import methods_and_functions_section4
 import conditions_and_loops_section5
 import os
 from pathlib import Path
+
 def start_menu():
     global WIDTH, HEIGHT, screen, clock, FPS, WHITE, BLACK, big_font, small_font, back1
 
@@ -211,19 +213,22 @@ def main():
                 text_from_consol = []
 
                 try:
-                    file_path = str(Path.home)
-                    with open(file_path + '\output.py', 'w') as file:
+                    file_path = str(Path.home()) + '\\Documents\\python_output_program'
+                    if not os.path.exists(file_path):
+                        os.makedirs(file_path)
+                    file_path = file_path.replace('\\', '\\\\')
+                    with open(file_path + '\\output.py', 'w', encoding='UTF-8') as file:
                         file.write(
-                            f"with open({file_path}+'\console.txt', 'w') as file:\n\tfile.write('')\nfile = open({file_path} + '\console.txt', 'a')\n")
-                    with open(file_path + '\output.py', 'a') as file:
+                            f"with open('{file_path}\\\console.txt', 'w') as file:\n\tfile.write('')\nfile = open('{file_path}\\\console.txt', 'a')\n")
+                    with open(file_path + '\\output.py', 'a', encoding='UTF-8') as file:
                         for p in program:
                             p[0].action(file, p[1], p[3], p[4], p[5], flag_first_tab=flag_first_tab)
                             flag_first_tab = False
                         file.write('\nfile.close()')
-                    with open(file_path + '\output.py', 'r') as file:
+                    with open(file_path + '\\output.py', 'r', encoding='UTF-8') as file:
                         command = ''.join(file.readlines())
                         exec(command)
-                    with open(file_path + '\console.txt', 'r') as file:
+                    with open(file_path + '\\console.txt', 'r', encoding='UTF-8') as file:
                         text_from_consol = []
                         for line in file.readlines():
                             text_from_consol.append(small_font.render(line[:-1], True, BLACK))
