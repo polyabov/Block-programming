@@ -237,7 +237,7 @@ def main():
                     text_from_consol.append(
                         small_font.render('Вероятно, вы неправильно использовали блоки "Начало" или "Конец",', True, BLACK))
                     text_from_consol.append(
-                        small_font.render('которые должны быть только в начале и конце тела цикла.', True, BLACK))
+                        small_font.render('которые должны быть в начале и конце тела цикла.', True, BLACK))
                 except NameError:
                     text_from_consol.append(small_font.render('Ошибка имени переменной.', True, BLACK))
                     text_from_consol.append(
