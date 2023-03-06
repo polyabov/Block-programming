@@ -1,4 +1,3 @@
-import pip
 import pygame
 import pygame_widgets
 from pygame_widgets.textbox import TextBox
