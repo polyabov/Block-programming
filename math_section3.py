@@ -15,9 +15,12 @@ with open('files/max.bmp') as file:
     max_image = pygame.image.load(file)
 with open('files/min.bmp') as file:
     min_image = pygame.image.load(file)
+with open('files/division.bmp') as file:
+    division_image = pygame.image.load(file)
 
-name_img = dict(plus=plus_image, minus=minus_image, multiplication=multiplication_image, div=div_image,
-                mod=mod_image, max=max_image, min=min_image)
+
+name_img = dict(plus=plus_image, minus=minus_image, multiplication=multiplication_image, division=division_image,
+                div=div_image, mod=mod_image, max=max_image, min=min_image)
 
 
 def init():
@@ -45,6 +48,8 @@ def action(file, name, text1='', text2='', text3='', text4='', flag_first_tab=Fa
         print(f"{text1} = {text2} - {text3}", file=file)
     if name == 'multiplication':
         print(f"{text1} = {text2} * {text3}", file=file)
+    if name == 'division':
+        print(f"{text1} = {text2} / {text3}", file=file)
     if name == 'div':
         print(f"{text1} = {text2} // {text3}", file=file)
     if name == 'mod':
@@ -75,6 +80,9 @@ texts = {'min': [['Введите имя присваемой переменно
              'multiplication': [['Введите имя присваемой переменной:', 'Если такой еще не существует она будет создана.'],
                                 ['Введите первый множитель', 'Если вы введете значение строки в кавычках, либо имя строковой переменной',
                                  'а затем число, то переменная будет равна данной строке повторенной это число раз.'], ['Введите второй множитель:']],
+             'division': [['Введите имя присваемой переменной:', 'Если такой еще не существует она будет создана.'],
+                          ['Введите делимое:'],
+                          ['Введите делитель:', 'Не должен быть равен нулю.']],
              'div': [['Введите имя присваемой переменной:', 'Если такой еще не существует она будет создана.'],
                      ['Введите делимое:'],
                      ['Введите делитель:', 'Не должен быть равен нулю.']],

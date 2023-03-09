@@ -188,7 +188,7 @@ def main():
                         for number_of_rects_list, rects_list in enumerate([['print_phrase', 'print_var', 'var_to_int', 'var_to_float', 'var_to_str',
                                             'var_to_list', 'var_to_set', 'clear', 'while', 'for_elem_in',
                                             'for_in_range', 'if'], ['var', 'copy', 'reversed', 'len', 'min', 'max', 'add', 'remove',
-                                              'append', 'if_contains', 'if_not_contains'], ['plus', 'minus', 'multiplication', 'div',
+                                              'append', 'if_contains', 'if_not_contains'], ['plus', 'minus', 'multiplication', 'division', 'div',
                                               'mod', 'replace', 'elem_by_index', 'index', 'split'], ['slice_by_index']]):
                             if name_of_rect in rects_list:
                                 for textpr_i in range(number_of_rects_list + 1):
@@ -375,6 +375,9 @@ def main():
                                                               [(elem[2].centerx - 35, elem[2].centery - 35),
                                                                (elem[2].centerx - 80, elem[2].centery - 5),
                                                                (elem[2].centerx + 15, elem[2].centery - 5)],
+                                                          'division':[(elem[2].centerx - 40, elem[2].centery - 35),
+                                                                      (elem[2].centerx - 85, elem[2].centery),
+                                                                      (elem[2].centerx + 15, elem[2].centery)],
                                                           'div': [(elem[2].centerx - 70, elem[2].centery - 50),
                                                                   (elem[2].centerx - 80, elem[2].centery + 10),
                                                                   (elem[2].centerx + 15, elem[2].centery + 10)],
